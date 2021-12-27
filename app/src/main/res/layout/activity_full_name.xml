@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Ui.SignUP.FullName">
+
+
+    <TextView
+        android:id="@+id/full_name_FullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/fullname"
+        android:textColor="@color/blue"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginTop="50sp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/full_name_material_first_name_filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/full_name_FullName"
+        android:layout_marginTop="50sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:hint="FIRST NAME"
+        android:focusable="true"
+        android:textColorHint="@color/black"
+        android:focusableInTouchMode="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/full_name_first_name_filled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textCapSentences"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/full_name_material_lsat_name_filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/full_name_material_first_name_filled"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:hint="LAST NAME"
+        android:focusable="true"
+        android:textColorHint="@color/black"
+        android:focusableInTouchMode="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/full_name_last_name_filled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textCapSentences"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/full_name_btn"
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30sp"
+        android:text="CONTINUE"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_shape"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:enabled="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

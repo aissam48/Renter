@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Renter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fullname">FullName</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verification">Verification</string>
+</resources>
