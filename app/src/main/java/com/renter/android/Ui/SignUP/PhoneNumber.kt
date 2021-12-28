@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
@@ -44,15 +45,21 @@ class PhoneNumber : AppCompatActivity() {
 
         phone_number_btn.setOnClickListener {
 
+            phone_number_btn.visibility = View.INVISIBLE
+            phone_number_btn.isEnabled = false
+            phone_number_wait.visibility = View.VISIBLE
+
             GlobalScope.launch {
+
 
                 val response = NetworkingRetrofit().retrofit.
                 create(RetrofitApi::class.java).
                 CodeVerifyAtSignUp(full_name_phone_number_filled.text!!.toString())
 
+
                 when(response.isSuccessful){
                     true->{
-                        val res = JSONObject(Gson().toJson(response))
+                        val res = JSONObject(Gson().toJson(response.body()))
                         val statue = res.getBoolean("Statue")
                         val message  =res.getString("Message")
 
@@ -60,19 +67,34 @@ class PhoneNumber : AppCompatActivity() {
 
                             true -> {
 
+                                val room = Room.databaseBuilder(this@PhoneNumber, UserDB::class.java, "UserDB").allowMainThreadQueries().fallbackToDestructiveMigration().build()
+                                val db = room.userDoa()
+
+                                val user = db.GetUser(CurrentUser_ID) [0]
+                                user.PhoneNumber = full_name_phone_number_filled.text!!.toString()
+
+                                db.UpdateUser(user)
+
                                 val intent = Intent(this@PhoneNumber, VerifyPhoneNumber::class.java)
                                 intent.putExtra("Code", message)
                                 intent.putExtra("CurrentUser_ID", CurrentUser_ID)
                                 startActivity(intent)
+
                             }
 
                             false -> {
+                                phone_number_btn.visibility = View.VISIBLE
+                                phone_number_btn.isEnabled = true
+                                phone_number_wait.visibility = View.GONE
                                 Toast.makeText(this@PhoneNumber, "Issue in our server, try later", Toast.LENGTH_LONG).show()
                             }
                         }
                     }
 
                     false->{
+                        phone_number_btn.visibility = View.VISIBLE
+                        phone_number_btn.isEnabled = true
+                        phone_number_wait.visibility = View.GONE
                         Toast.makeText(this@PhoneNumber, "Issue Connection", Toast.LENGTH_LONG).show()
                     }
                 }
@@ -80,19 +102,6 @@ class PhoneNumber : AppCompatActivity() {
             }
 
 
-
-
-            val room = Room.databaseBuilder(this, UserDB::class.java, "UserDB").allowMainThreadQueries().fallbackToDestructiveMigration().build()
-            val db = room.userDoa()
-
-            val user = db.GetUser(CurrentUser_ID) [0]
-            user.PhoneNumber = full_name_phone_number_filled.text!!.toString()
-
-            db.UpdateUser(user)
-
-            val intent = Intent(this, VerifyPhoneNumber::class.java)
-            intent.putExtra("CurrentUser_ID", CurrentUser_ID)
-            startActivity(intent)
 
         }
 

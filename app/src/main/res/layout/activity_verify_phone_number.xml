@@ -22,6 +22,20 @@
         android:layout_marginTop="50sp"
         />
 
+    <TextView
+        android:id="@+id/verify_Verification_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verify_Verification"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:text="@string/enter_the_code_that_you_received_at_sms_box"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginTop="10sp"
+        />
+
     <com.alimuzaffar.lib.pin.PinEntryEditText
         android:id="@+id/verify_Code"
         android:layout_width="match_parent"
@@ -29,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/verify_Verification"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="70sp"
         app:pinLineColors="@color/black"
         android:maxLength="6"
         android:layout_marginStart="30sp"

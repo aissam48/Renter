@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">Renter</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fullname">FullName</string>
     <string name="first_name">FIRST NAME</string>
     <string name="phone_number">Phone Number</string>
     <string name="verification">Verification</string>
+    <string name="enter_the_code_that_you_received_at_sms_box">Enter the code that you received at SMS box</string>
+    <string name="male_female">Male/Female</string>
+    <string name="create">CREATE</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="real_profile_image">Please, add your real image to make people knows you and for more connection</string>
+    <string name="click_above_to_add_profile_image">Click above to add profile image</string>
+    <string name="continu">CONTINUE</string>
 </resources>

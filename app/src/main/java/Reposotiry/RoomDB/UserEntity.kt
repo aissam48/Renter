@@ -11,7 +11,7 @@ data class UserEntity(
     @ColumnInfo (name = "FirstName") var FirstName:String,
     @ColumnInfo (name = "LastName") var LastName :String,
     @ColumnInfo (name = "PhoneNumber") var PhoneNumber:String,
-    @ColumnInfo (name = "Sex") val Sex:String,
+    @ColumnInfo (name = "Sex") var Sex:String,
     @ColumnInfo (name = "ProfileImage") var ProfileImage:String
 
 ) {

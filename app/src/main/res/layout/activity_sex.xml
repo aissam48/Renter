@@ -4,6 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Ui.SignUP.Sex">
+
+    <TextView
+        android:id="@+id/sex_Sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/blue"
+        android:text="@string/male_female"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginTop="50sp"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step6_man"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30sp"
+        app:layout_constraintTop_toBottomOf="@id/sex_Sex"
+        app:layout_constraintEnd_toStartOf="@id/step6_woman"
+        android:background="@drawable/step6_befor"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ic_man"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/male"
+            android:layout_margin="15sp"
+            android:src="@mipmap/ic_man"/>
+
+        <TextView
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_man"
+            android:text="@string/male"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="25sp"
+            android:layout_marginBottom="10sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step6_woman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sex_Sex"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30sp"
+        app:layout_constraintStart_toEndOf="@id/step6_man"
+        android:background="@drawable/step6_befor"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ic_woman"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/female"
+            android:layout_margin="15sp"
+            android:src="@mipmap/ic_woman"/>
+
+        <TextView
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_woman"
+            android:text="@string/female"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="25sp"
+            android:layout_marginBottom="10sp"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/sex_btn"
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30sp"
+        android:text="@string/continu"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_shape"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:enabled="false"
+        />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/sex_wait"
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30sp"
+        app:SpinKit_Color="@color/white"
+        android:background="@drawable/btn_shape"
+        app:SpinKit_Style="Circle"
+        android:padding="7sp"
+        android:visibility="gone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
