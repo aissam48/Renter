@@ -45,7 +45,10 @@ class FullName : AppCompatActivity() {
                 ""
                 )
 
-            val userDB = Room.databaseBuilder(this, UserDB::class.java, "UserDB").allowMainThreadQueries().fallbackToDestructiveMigration().build()
+            val userDB = Room.databaseBuilder(this, UserDB::class.java, "UserDB")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build()
             val db = userDB.userDoa()
 
             db.InsertUser(userEntity)

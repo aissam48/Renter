@@ -39,7 +39,7 @@ class PhoneNumber : AppCompatActivity() {
 
         full_name_phone_number_filled.doOnTextChanged { text, start, before, count ->
 
-            phone_number_btn.isEnabled  =text!!.contains("+212-")&& text.length == 14
+            phone_number_btn.isEnabled  =text!!.startsWith("+212-")&& text.length == 14
 
         }
 

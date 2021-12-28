@@ -56,6 +56,9 @@ class ProfileImage : AppCompatActivity() {
                 if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
 
                     UploadImageFromExternalStorage()
+                }else{
+
+                    requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 12)
                 }
 
             }
@@ -70,6 +73,22 @@ class ProfileImage : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, 12)
 
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if(requestCode == 12 && grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            UploadImageFromExternalStorage()
+        }else{
+
+            Toast.makeText(this, "Access denied", Toast.LENGTH_LONG).show()
+
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
