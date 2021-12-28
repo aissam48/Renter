@@ -4,6 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ui.SignUP.AddOrSkipImage">
+    tools:context=".Ui.SignUP.AddOrSkipImage"
+    android:background="@color/white"
+    >
+
+
+
+    <TextView
+        android:id="@+id/p_txt_congratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50sp"
+        android:text="Congratulation"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/p_family"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/p_txt_congratulation"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Your account has created, now you're part of sttepa family"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textAlignment="center"
+        android:layout_marginEnd="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="15sp"
+        />
+
+    <TextView
+        android:id="@+id/p_btn_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/p_family"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Add profile image"
+        android:background="@drawable/btn_shape"
+        android:layout_marginTop="70sp"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:paddingBottom="10sp"
+        android:paddingTop="10sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/p_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/p_btn_add_image"
+        app:layout_constraintEnd_toEndOf="@id/p_btn_add_image"
+        app:layout_constraintTop_toBottomOf="@id/p_btn_add_image"
+        android:layout_margin="15sp"
+        android:text="Skip "
+        android:textSize="16sp"
+
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

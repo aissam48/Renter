@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="30sp"
-        android:text="@string/continu"
+        android:text="@string/create"
         android:fontFamily="sans-serif-condensed-medium"
         android:textColor="@color/white"
         android:background="@drawable/btn_shape"

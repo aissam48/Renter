@@ -2,6 +2,8 @@ package com.renter.android.Ui.SignUP
 
 import Reposotiry.RoomDB.UserDB
 import Reposotiry.RoomDB.UserEntity
+import android.content.ContentProvider
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
@@ -47,6 +49,10 @@ class FullName : AppCompatActivity() {
             val db = userDB.userDoa()
 
             db.InsertUser(userEntity)
+
+            val sh = getSharedPreferences("CurrentUser_ID", Context.MODE_PRIVATE).edit()
+            sh.putString("CurrentUser_ID",currentUser_ID)
+            sh.apply()
 
             val intent = Intent(this, PhoneNumber::class.java)
             intent.putExtra("CurrentUser_ID", currentUser_ID)

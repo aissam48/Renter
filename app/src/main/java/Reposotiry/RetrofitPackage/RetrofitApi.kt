@@ -20,6 +20,6 @@ interface RetrofitApi {
 
     @Multipart
     @POST("/UploadProfileImage")
-    suspend fun UploadProfileImage (@Part file: MultipartBody.Part)
+    suspend fun UploadProfileImage (@Part file: MultipartBody.Part):Response<JsonObject>
 
 }

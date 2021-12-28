@@ -69,7 +69,7 @@ class Sex : AppCompatActivity() {
                 val user = db.GetUser(CurrentUser_ID)[0]
 
                 user.Sex = sexyOfUser
-
+                user.ProfileImage = "Empty"
 
 
                 val response = NetworkingRetrofit().retrofit
@@ -79,13 +79,12 @@ class Sex : AppCompatActivity() {
 
                     true->{
 
-
                         val json  = JSONObject(Gson().toJson(response.body()))
-                        when(json.getBoolean("statue")){
+                        when(json.getBoolean("Statue")){
 
                             true->{
                                 db.UpdateUser(user)
-                                val intent = Intent(this@Sex, ProfileImage::class.java)
+                                val intent = Intent(this@Sex, AddOrSkipImage::class.java)
                                 intent.putExtra("CurrentUser_ID", CurrentUser_ID)
                                 startActivity(intent)
                             }
@@ -95,11 +94,8 @@ class Sex : AppCompatActivity() {
                                 sex_btn.isEnabled = true
                                 sex_wait.visibility = View.GONE
                                 Toast.makeText(this@Sex, "Issue in our server, try later", Toast.LENGTH_LONG).show()
-
                             }
-
                         }
-
                     }
 
                     false ->{
@@ -111,14 +107,7 @@ class Sex : AppCompatActivity() {
 
                     }
                 }
-
             }
-
-
-
-
         }
-
-
     }
 }
